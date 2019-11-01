@@ -2,12 +2,16 @@ import java.util.Objects;
 
 class ParkingSpot {
     private final Double id;
-    private final ParkingSpot type;
+    private final ParkingSpotType type;
     private Vehicle vehicle;
 
-    ParkingSpot(ParkingSpot type) {
+    ParkingSpot(ParkingSpotType type) {
         this.id = Math.random();
         this.type = type;
+    }
+
+    public ParkingSpotType getType() {
+        return type;
     }
 
     void parkVehicle(Vehicle vehicle) throws RuntimeException {
@@ -24,7 +28,7 @@ class ParkingSpot {
             this.vehicle = null;
             return vehicle;
         }
-        throw new RuntimeException("car doesn't exist in parking spot");
+        throw new RuntimeException("Vehicle doesn't exist in parking spot");
     }
 
     @Override

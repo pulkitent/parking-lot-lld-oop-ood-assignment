@@ -6,4 +6,8 @@ public class Vehicle {
         this.id = Math.random();
         this.type = type;
     }
+
+    public VehicleType getType() {
+        return type;
+    }
 }

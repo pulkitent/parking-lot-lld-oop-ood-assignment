@@ -9,7 +9,7 @@ public class EntryPoint {
         this.rate = rate;
     }
 
-    ParkingTicket generateTicket() {
+    ParkingTicket generateTicket(Vehicle vehicle) {
         return new ParkingTicket(LocalDateTime.now(), this.rate);
     }
 }

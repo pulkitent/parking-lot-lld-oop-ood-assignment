@@ -14,7 +14,7 @@ public class ParkingLot {
 
     ParkingSpot parkVehicle(Vehicle vehicle) {
         for (ParkingFloor floor : parkingFloors) {
-            if (floor.hasSpace()) {
+            if (floor.hasSpace(vehicle)) {
                 ParkingSpot parkingSpot = floor.parkVehicle(vehicle);
                 return parkingSpot;
             }
