@@ -1,5 +1,5 @@
 public class ElectricalParkingSpot extends ParkingSpot {
-    public ElectricalParkingSpot(ParkingSpot type) {
+    public ElectricalParkingSpot(ParkingSpotType type) {
         super(type);
     }
 }

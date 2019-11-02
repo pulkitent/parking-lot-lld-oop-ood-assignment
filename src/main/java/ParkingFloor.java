@@ -1,4 +1,3 @@
-import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -22,10 +21,12 @@ public class ParkingFloor {
         for (VehicleType type : vehicleTypes) {
             List<ParkingSpot> parkingSpotsForVehicleType = emptyParkingSpotsMap.get(type);
             if (parkingSpotsForVehicleType == null || parkingSpotsForVehicleType.isEmpty()) {
-                this.displayBoard.showAvailability("This floor is full for vehicle type " + type.toString());
+                this.displayBoard.displayMessage("This floor is full for vehicle type " + type.toString());
             } else {
-                this.displayBoard.showAvailability("Remaining spots for vehicle type on this fl0or is " +
+                this.displayBoard.displayMessage("Remaining spots for vehicle type on this floor is " +
                         parkingSpotsForVehicleType.size());
+                this.displayBoard.displayMessage("Those empty spots on this floor are " +
+                        parkingSpotsForVehicleType);
             }
         }
     }
@@ -69,9 +70,10 @@ public class ParkingFloor {
         return vehicle;
     }
 
-    public Boolean isNotFull() {
+    Boolean isNotFull() {
         if (this.emptyParkingSpotsMap.isEmpty())
             return true;
+
         Collection<List<ParkingSpot>> values = this.emptyParkingSpotsMap.values();
 
         for (List parkingSpots : values) {
