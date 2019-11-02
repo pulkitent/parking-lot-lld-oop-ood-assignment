@@ -13,6 +13,10 @@ class ParkingTicket {
     }
 
     BigDecimal calculateAmount() {
-        return null;
+        LocalDateTime currentTime = LocalDateTime.now();
+        int totalHours = currentTime.compareTo(this.entryTime);
+
+        String finalCost = Integer.toString(totalHours * this.rate.getAmount());
+        return new BigDecimal(finalCost);
     }
 }

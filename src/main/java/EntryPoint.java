@@ -2,14 +2,15 @@ import java.time.LocalDateTime;
 
 public class EntryPoint {
     private final Double id;
-    private final ParkingRate rate;
 
     public EntryPoint(ParkingRate rate) {
         this.id = Math.random();
-        this.rate = rate;
     }
 
     ParkingTicket generateTicket(Vehicle vehicle) {
-        return new ParkingTicket(LocalDateTime.now(), this.rate);
+        VehicleType type = vehicle.getType();
+        ParkingRate rate = ParkingRate.valueOf(type.toString());
+
+        return new ParkingTicket(LocalDateTime.now(), rate);
     }
 }
