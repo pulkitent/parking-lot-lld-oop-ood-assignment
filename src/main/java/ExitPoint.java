@@ -7,7 +7,8 @@ public class ExitPoint {
         this.id = Math.random();
     }
 
-    void scanTicket(ParkingTicket ticket) {
+    BigDecimal scanTicket(ParkingTicket ticket) {
         BigDecimal amountToBePaid = ticket.calculateAmount();
+        return amountToBePaid;
     }
 }

@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -65,6 +67,19 @@ public class ParkingFloor {
         emptyParkingSpotsForGivenVehicleTypes.add(parkingSpot);
 
         return vehicle;
+    }
+
+    public Boolean isNotFull() {
+        if (this.emptyParkingSpotsMap.isEmpty())
+            return true;
+        Collection<List<ParkingSpot>> values = this.emptyParkingSpotsMap.values();
+
+        for (List parkingSpots : values) {
+            if (parkingSpots.isEmpty())
+                return true;
+        }
+
+        return false;
     }
 
     Boolean hasSpace(Vehicle vehicle) {
