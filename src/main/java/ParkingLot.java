@@ -28,7 +28,7 @@ public class ParkingLot {
     Vehicle unParkVehicle(ParkingSpot parkingSpot) {
         for (ParkingFloor floor : parkingFloors) {
             if (floor.hasGivenParkingSpot(parkingSpot)) {
-                floor.unParkVehicle(parkingSpot);
+                return floor.unParkVehicle(parkingSpot);
             }
         }
 
