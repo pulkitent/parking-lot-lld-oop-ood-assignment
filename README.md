@@ -35,7 +35,7 @@ deal with the real-life constraints/trade-offs while designing a system.
 It is important to note that they are not looking for a GUI and they are not assessing
 you on the capabilities around code required to do the I/O. The focus is on the
 overall design. So, while building a solution.
-Following is a list of things to keep in mind, before you submit your code :
+Following is a list of things to keep in mind, before you submit your code:
 
 1. Is behaviour of an object distinguished from its state and is the state
 encapsulated?
