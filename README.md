@@ -99,6 +99,3 @@ than concrete implementation")
 4. Encapsulation of behaviour in some classes can be further improved
 
 5. More mocking and stubbing of test data in unit tests
-
-
-
